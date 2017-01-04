@@ -339,3 +339,17 @@ function display_shortcode($post) {
 	</p>
 	<?php
 }
+
+/**
+ * Returns the array with the asociate slides
+ *
+ * This is a very versatile function. You can use for get all
+ * slides info for render yout custom html
+ * @param  WP_Post Objec $slider A object post type = slider
+ * @return array        Array of slides
+ */
+function get_slides_array($slider)
+{
+  $slides = get_fields($slider->ID);
+  return $slides['slide'];
+}
