@@ -2,19 +2,11 @@
 /*
 Plugin Name: Swapps Wordpress Slider
 Plugin URI: http://swapps.io
-Description: Easy, simple sliders.
+Description: 
 Author: Julián Bonilla
 Version: 0.1
 Author URI: http://swapps.io/
 */
-
-// register_activation_hook( __FILE__, function () {
-//     slider_post_types_register();
-//     flush_rewrite_rules();
-// } );
-// register_deactivation_hook( __FILE__, function () {
-//     flush_rewrite_rules();
-// } );
 
 define( 'SW_SLIDER_VERSION', '0.1' );
 define( 'SW_SLIDER_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
