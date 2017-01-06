@@ -1,8 +1,7 @@
 <?php
 /*
-Plugin Name: Swapps Wordpress Slider
+Plugin Name: WP Simple Slider
 Plugin URI: http://swapps.io
-Description: 
 Author: Julián Bonilla
 Version: 0.1
 Author URI: http://swapps.io/
