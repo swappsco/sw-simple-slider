@@ -2,7 +2,7 @@
 /*
 Plugin Name: Sw Simple Slider
 Plugin URI: http://swapps.io
-Author: Julián Bonilla
+Author: Swapps
 Version: 0.1
 Author URI: http://swapps.io/
 */
