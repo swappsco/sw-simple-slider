@@ -20,7 +20,15 @@
                         "type": "image_crop",
                         "instructions": "",
                         "required": 1,
-                        "conditional_logic": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_588faa04951de",
+                                    "operator": "!=",
+                                    "value": "text"
+                                }
+                            ]
+                        ],
                         "wrapper": {
                             "width": "",
                             "class": "",
@@ -134,6 +142,33 @@
                 "label": "Add slides",
                 "name": "slide",
                 "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "full": "Full Width Slider",
+                    "text": "Text Slider"
+                },
+                "default_value": [
+                    "full"
+                ],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_588faa04951de",
+                "label": "Slider type",
+                "name": "slider_type",
+                "type": "select",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
