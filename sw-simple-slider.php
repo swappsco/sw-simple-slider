@@ -157,17 +157,10 @@ acf_add_local_field_group(array (
           ),
         ),
         array (
-          'post_type' => array (
-          ),
-          'taxonomy' => array (
-          ),
-          'allow_null' => 0,
-          'multiple' => 0,
-          'allow_archives' => 1,
           'key' => 'field_57f7f8d6421d8',
           'label' => 'Button Link',
           'name' => 'link',
-          'type' => 'page_link',
+          'type' => 'link_picker',
           'instructions' => '',
           'required' => 0,
           'conditional_logic' => 0,
