@@ -376,6 +376,9 @@ function display_shortcode($post) {
  */
 function get_slides_array($slider)
 {
-  $slides = get_fields($slider->ID);
-  return $slides['slide'];
+  if (function_exists('get_fields')) {
+    $slides = get_fields($slider->ID);
+    return $slides['slide'];
+  }
+  return False;
 }
