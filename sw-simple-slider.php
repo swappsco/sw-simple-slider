@@ -3,7 +3,7 @@
 Plugin Name: Sw Simple Slider
 Plugin URI: http://swapps.io
 Author: Swapps Development Team
-Version: 0.2.0
+Version: 0.2.1
 Author URI: https://www.swapps.io/
 */
 
@@ -63,7 +63,15 @@ acf_add_local_field_group(array (
           'type' => 'image_crop',
           'instructions' => '',
           'required' => 1,
-          'conditional_logic' => 0,
+          'conditional_logic' => array (
+            array (
+              array (
+                'field' => 'field_588faa04951de',
+                'operator' => '!=',
+                'value' => 'text',
+              ),
+            ),
+          ),
           'wrapper' => array (
             'width' => '',
             'class' => '',
@@ -149,17 +157,10 @@ acf_add_local_field_group(array (
           ),
         ),
         array (
-          'post_type' => array (
-          ),
-          'taxonomy' => array (
-          ),
-          'allow_null' => 0,
-          'multiple' => 0,
-          'allow_archives' => 1,
           'key' => 'field_57f7f8d6421d8',
           'label' => 'Button Link',
           'name' => 'link',
-          'type' => 'page_link',
+          'type' => 'link_picker',
           'instructions' => '',
           'required' => 0,
           'conditional_logic' => 0,
@@ -179,6 +180,33 @@ acf_add_local_field_group(array (
       'label' => 'Add slides',
       'name' => 'slide',
       'type' => 'repeater',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+    ),
+    array (
+      'multiple' => 0,
+      'allow_null' => 0,
+      'choices' => array (
+        'full' => 'Full Width Slider',
+        'text' => 'Text Slider',
+      ),
+      'default_value' => array (
+        0 => 'full',
+      ),
+      'ui' => 0,
+      'ajax' => 0,
+      'placeholder' => '',
+      'return_format' => 'value',
+      'key' => 'field_588faa04951de',
+      'label' => 'Slider type',
+      'name' => 'slider_type',
+      'type' => 'select',
       'instructions' => '',
       'required' => 0,
       'conditional_logic' => 0,
