@@ -151,7 +151,8 @@
                 "allow_null": 0,
                 "choices": {
                     "full": "Full Width Slider",
-                    "text": "Text Slider"
+                    "text": "Text Slider",
+                    "fixed": "Fixed Height Slider"
                 },
                 "default_value": [
                     "full"
@@ -167,6 +168,35 @@
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "min": "",
+                "max": "",
+                "step": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_58af4493cde4a",
+                "label": "Height",
+                "name": "height",
+                "type": "number",
+                "instructions": "Fixed height (px) that will have the slider.",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_588faa04951de",
+                            "operator": "==",
+                            "value": "fixed"
+                        }
+                    ]
+                ],
                 "wrapper": {
                     "width": "",
                     "class": "",
