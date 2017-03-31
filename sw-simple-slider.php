@@ -193,9 +193,9 @@ acf_add_local_field_group(array (
       'multiple' => 0,
       'allow_null' => 0,
       'choices' => array (
-        'full' => 'Full Width Slider',
+        'full' => 'Full Screen Slider',
+        'full_responsive' => 'Full Width Slider (Responsive)',
         'text' => 'Text Slider',
-        'fixed' => 'Fixed Height Slider',
       ),
       'default_value' => array (
         0 => 'full',

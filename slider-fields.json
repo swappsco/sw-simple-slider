@@ -150,9 +150,9 @@
                 "multiple": 0,
                 "allow_null": 0,
                 "choices": {
-                    "full": "Full Width Slider",
-                    "text": "Text Slider",
-                    "fixed": "Fixed Height Slider"
+                    "full": "Full Screen Slider",
+                    "full_responsive": "Full Width Slider (Responsive)",
+                    "text": "Text Slider"
                 },
                 "default_value": [
                     "full"
