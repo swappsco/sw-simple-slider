@@ -1,0 +1,13 @@
+{
+    "name": "swapps/wp-simple-slider",
+    "description": "This is a simple library to create Sliders in Swapps",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Swapps Developers  Team",
+            "email": "developers@swapps.co"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

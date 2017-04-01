@@ -20,7 +20,15 @@
                         "type": "image_crop",
                         "instructions": "",
                         "required": 1,
-                        "conditional_logic": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_588faa04951de",
+                                    "operator": "!=",
+                                    "value": "text"
+                                }
+                            ]
+                        ],
                         "wrapper": {
                             "width": "",
                             "class": "",
@@ -106,15 +114,10 @@
                         }
                     },
                     {
-                        "post_type": [],
-                        "taxonomy": [],
-                        "allow_null": 0,
-                        "multiple": 0,
-                        "allow_archives": 1,
                         "key": "field_57f7f8d6421d8",
                         "label": "Button Link",
                         "name": "link",
-                        "type": "page_link",
+                        "type": "link_picker",
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -137,6 +140,63 @@
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "full": "Full Screen Slider",
+                    "full_responsive": "Full Width Slider (Responsive)",
+                    "text": "Text Slider"
+                },
+                "default_value": [
+                    "full"
+                ],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_588faa04951de",
+                "label": "Slider type",
+                "name": "slider_type",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "min": "",
+                "max": "",
+                "step": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_58af4493cde4a",
+                "label": "Height",
+                "name": "height",
+                "type": "number",
+                "instructions": "Fixed height (px) that will have the slider.",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_588faa04951de",
+                            "operator": "==",
+                            "value": "fixed"
+                        }
+                    ]
+                ],
                 "wrapper": {
                     "width": "",
                     "class": "",
