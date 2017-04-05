@@ -49,6 +49,30 @@ acf_add_local_field_group(array (
     array (
       'sub_fields' => array (
         array (
+          'layout' => 'vertical',
+          'choices' => array (
+            'image' => 'Image',
+            'video' => 'Video',
+          ),
+          'default_value' => 'image',
+          'other_choice' => 0,
+          'save_other_choice' => 0,
+          'allow_null' => 0,
+          'return_format' => 'value',
+          'key' => 'field_58dd12c983471',
+          'label' => 'Slide type',
+          'name' => 'slide_type',
+          'type' => 'radio',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+        ),
+        array (
           'force_crop' => 'yes',
           'crop_type' => 'hard',
           'preview_size' => 'medium_large',
@@ -70,6 +94,11 @@ acf_add_local_field_group(array (
                 'operator' => '!=',
                 'value' => 'text',
               ),
+              array (
+                'field' => 'field_58dd12c983471',
+                'operator' => '==',
+                'value' => 'image',
+              ),
             ),
           ),
           'wrapper' => array (
@@ -79,6 +108,35 @@ acf_add_local_field_group(array (
           ),
           'width' => 1200,
           'height' => 600,
+        ),
+        array (
+          'default_value' => '',
+          'placeholder' => '',
+          'key' => 'field_58dd132a83472',
+          'label' => 'Slide video',
+          'name' => 'video',
+          'type' => 'url',
+          'instructions' => 'Provide a Mp4, Vimeo or Youtube URL',
+          'required' => 1,
+          'conditional_logic' => array (
+            array (
+              array (
+                'field' => 'field_58dd12c983471',
+                'operator' => '==',
+                'value' => 'video',
+              ),
+              array (
+                'field' => 'field_588faa04951de',
+                'operator' => '!=',
+                'value' => 'text',
+              ),
+            ),
+          ),
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
         ),
         array (
           'default_value' => '',
