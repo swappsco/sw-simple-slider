@@ -3,7 +3,7 @@
 Plugin Name: Sw Simple Slider
 Plugin URI: http://swapps.io
 Author: Swapps Development Team
-Version: 0.2.3
+Version: 0.2.5
 Author URI: https://www.swapps.io/
 */
 
