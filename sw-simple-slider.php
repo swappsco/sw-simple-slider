@@ -65,7 +65,15 @@ acf_add_local_field_group(array (
           'type' => 'radio',
           'instructions' => '',
           'required' => 0,
-          'conditional_logic' => 0,
+          'conditional_logic' => array (
+            array (
+              array (
+                'field' => 'field_588faa04951de',
+                'operator' => '!=',
+                'value' => 'text',
+              ),
+            ),
+          ),
           'wrapper' => array (
             'width' => '',
             'class' => '',
@@ -269,35 +277,6 @@ acf_add_local_field_group(array (
       'instructions' => '',
       'required' => 0,
       'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-    ),
-    array (
-      'default_value' => '',
-      'min' => '',
-      'max' => '',
-      'step' => '',
-      'placeholder' => '',
-      'prepend' => '',
-      'append' => '',
-      'key' => 'field_58af4493cde4a',
-      'label' => 'Height',
-      'name' => 'height',
-      'type' => 'number',
-      'instructions' => 'Fixed height (px) that will have the slider.',
-      'required' => 1,
-      'conditional_logic' => array (
-        array (
-          array (
-            'field' => 'field_588faa04951de',
-            'operator' => '==',
-            'value' => 'fixed',
-          ),
-        ),
-      ),
       'wrapper' => array (
         'width' => '',
         'class' => '',
