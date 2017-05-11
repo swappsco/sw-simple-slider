@@ -180,25 +180,6 @@
                         "placeholder": ""
                     },
                     {
-                        "default_value": "",
-                        "maxlength": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "key": "field_57f7f8b6421d7",
-                        "label": "Button Label",
-                        "name": "call_to_action_text",
-                        "type": "text",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        }
-                    },
-                    {
                         "key": "field_57f7f8d6421d8",
                         "label": "Button Link",
                         "name": "link",
