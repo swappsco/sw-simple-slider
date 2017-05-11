@@ -65,15 +65,7 @@ acf_add_local_field_group(array (
           'type' => 'radio',
           'instructions' => '',
           'required' => 0,
-          'conditional_logic' => array (
-            array (
-              array (
-                'field' => 'field_588faa04951de',
-                'operator' => '!=',
-                'value' => 'text',
-              ),
-            ),
-          ),
+          'conditional_logic' => 0,
           'wrapper' => array (
             'width' => '',
             'class' => '',
@@ -204,6 +196,52 @@ acf_add_local_field_group(array (
           ),
         ),
         array (
+          'key' => 'field_5914a9c95d284',
+          'label' => 'Button Design',
+          'name' => 'button_design',
+          'type' => 'select',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'choices' => array (
+            'Basic' => 'Basic',
+            'E-commerce' => 'E-commerce',
+          ),
+          'default_value' => array (
+            0 => 'Basic',
+          ),
+          'allow_null' => 0,
+          'multiple' => 0,
+          'ui' => 0,
+          'ajax' => 0,
+          'return_format' => 'value',
+          'placeholder' => '',
+        ),
+        array (
+          'default_value' => '',
+          'maxlength' => '',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'key' => 'field_57f7f8b6421d7',
+          'label' => 'Button Label',
+          'name' => 'call_to_action_text',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+        ),
+        array (
           'key' => 'field_57f7f8d6421d8',
           'label' => 'Button Link',
           'name' => 'link',
@@ -258,6 +296,35 @@ acf_add_local_field_group(array (
       'instructions' => '',
       'required' => 0,
       'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+    ),
+    array (
+      'default_value' => '',
+      'min' => '',
+      'max' => '',
+      'step' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      'key' => 'field_58af4493cde4a',
+      'label' => 'Height',
+      'name' => 'height',
+      'type' => 'number',
+      'instructions' => 'Fixed height (px) that will have the slider.',
+      'required' => 1,
+      'conditional_logic' => array (
+        array (
+          array (
+            'field' => 'field_588faa04951de',
+            'operator' => '==',
+            'value' => 'fixed',
+          ),
+        ),
+      ),
       'wrapper' => array (
         'width' => '',
         'class' => '',
@@ -322,6 +389,7 @@ function display_slider($name) {
         $slide_title = get_sub_field('title');
         $slide_title2 = get_sub_field('title_2');
         $slide_description = get_sub_field('description');
+        $slide_buttondesign = get_sub_field('button_design');
         $slide_link = get_sub_field('link');
         $slide_cta = get_sub_field('call_to_action_text');
         $output .= '<div class="item slides ';
