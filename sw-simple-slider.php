@@ -40,6 +40,48 @@ function slider_post_types_register() {
 
 add_action( 'init', 'slider_post_types_register' );
 
+function slider_taxonomy() {
+    register_taxonomy(
+        'slider-type',
+        array(
+          'slider'
+        ),
+        array(
+            'hierarchical' => true,
+            'label' => 'Slider type',
+            'labels' =>array(
+                'name' => 'Slider type',
+                'menu_name' => 'Slider types',
+                'singular_name' => 'Slider type',
+                'search_items' => 'Search slider type',
+                'popular_items' => 'Popular slider types',
+                'all_items' => 'All slider types',
+                'edit_item' => 'Edit slider type',
+                'update_item' => 'Update slider type',
+                'add_new_item' => 'Add new slider type',
+                'new_item_name' => 'Name of new slider type',
+                'separate_items_with_commas' => 'Separate slider types with commas',
+                'add_or_remove_items' => 'Add or remove slider types',
+                'choose_from_most_used' => 'Choose from most used slider types',
+                ),
+            'query_var' => true,
+            'rewrite' => array(
+                'slug' => 'slider_type',
+                'with_front' => false
+            )
+        )
+    );
+    $term = term_exists('Text', 'slider-type');
+    if ($term === 0 || $term === null) {
+        wp_insert_term('Text', 'slider-type', $args = array());
+    }
+    $term = term_exists('Image', 'slider-type');
+    if ($term === 0 || $term === null) {
+        wp_insert_term('Image', 'slider-type', $args = array());
+    }
+}
+add_action( 'init', 'slider_taxonomy' );
+
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
@@ -65,7 +107,15 @@ acf_add_local_field_group(array (
           'type' => 'radio',
           'instructions' => '',
           'required' => 0,
-          'conditional_logic' => 0,
+          'conditional_logic' => array (
+            array (
+              array (
+                'field' => 'field_588faa04951de',
+                'operator' => '!=',
+                'value' => 'text',
+              ),
+            ),
+          ),
           'wrapper' => array (
             'width' => '',
             'class' => '',
@@ -139,6 +189,33 @@ acf_add_local_field_group(array (
           ),
         ),
         array (
+          'key' => 'field_592f32341c00d',
+          'label' => 'Slide heading',
+          'name' => 'heading',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => array (
+            array (
+              array (
+                'field' => 'field_588faa04951de',
+                'operator' => '==',
+                'value' => 'text',
+              ),
+            ),
+          ),
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'placeholder' => 'Heading text of slide',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+        ),
+        array (
           'default_value' => '',
           'maxlength' => '',
           'placeholder' => 'Title of slide',
@@ -160,7 +237,7 @@ acf_add_local_field_group(array (
         array (
           'default_value' => '',
           'maxlength' => '',
-          'placeholder' => 'Secondary title of slider',
+          'placeholder' => 'Secondary title of slide',
           'prepend' => '',
           'append' => '',
           'key' => 'field_57f7f86d421d5',
@@ -277,35 +354,6 @@ acf_add_local_field_group(array (
       'instructions' => '',
       'required' => 0,
       'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-    ),
-    array (
-      'default_value' => '',
-      'min' => '',
-      'max' => '',
-      'step' => '',
-      'placeholder' => '',
-      'prepend' => '',
-      'append' => '',
-      'key' => 'field_58af4493cde4a',
-      'label' => 'Height',
-      'name' => 'height',
-      'type' => 'number',
-      'instructions' => 'Fixed height (px) that will have the slider.',
-      'required' => 1,
-      'conditional_logic' => array (
-        array (
-          array (
-            'field' => 'field_588faa04951de',
-            'operator' => '==',
-            'value' => 'fixed',
-          ),
-        ),
-      ),
       'wrapper' => array (
         'width' => '',
         'class' => '',
