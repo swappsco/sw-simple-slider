@@ -4,40 +4,57 @@
         "title": "Slide",
         "fields": [
             {
+                "key": "field_57f7f705421d2",
+                "label": "Add slides",
+                "name": "slide",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "Add Slide",
+                "collapsed": "",
                 "sub_fields": [
                     {
-                        "layout": "vertical",
-                        "choices": {
-                            "image": "Image",
-                            "video": "Video"
-                        },
-                        "default_value": "image",
-                        "other_choice": 0,
-                        "save_other_choice": 0,
-                        "allow_null": 0,
-                        "return_format": "value",
                         "key": "field_58dd12c983471",
                         "label": "Slide type",
                         "name": "slide_type",
                         "type": "radio",
                         "instructions": "",
                         "required": 0,
-                        "conditional_logic": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_588faa04951de",
+                                    "operator": "!=",
+                                    "value": "text"
+                                }
+                            ]
+                        ],
                         "wrapper": {
                             "width": "",
                             "class": "",
                             "id": ""
-                        }
+                        },
+                        "choices": {
+                            "image": "Image",
+                            "video": "Video"
+                        },
+                        "allow_null": 0,
+                        "other_choice": 0,
+                        "save_other_choice": 0,
+                        "default_value": "image",
+                        "layout": "vertical",
+                        "return_format": "value"
                     },
                     {
-                        "force_crop": "yes",
-                        "crop_type": "hard",
-                        "preview_size": "medium_large",
-                        "save_format": "object",
-                        "save_in_media_library": "yes",
-                        "target_size": "custom",
-                        "library": "all",
-                        "retina_mode": "no",
                         "key": "field_57f7f790421d3",
                         "label": "Slide Image",
                         "name": "image",
@@ -63,12 +80,18 @@
                             "class": "",
                             "id": ""
                         },
+                        "force_crop": "yes",
+                        "crop_type": "hard",
+                        "preview_size": "medium_large",
+                        "save_format": "object",
+                        "save_in_media_library": "yes",
+                        "target_size": "custom",
+                        "library": "all",
+                        "retina_mode": "no",
                         "width": 1200,
                         "height": 600
                     },
                     {
-                        "default_value": "",
-                        "placeholder": "",
                         "key": "field_58dd132a83472",
                         "label": "Slide video",
                         "name": "video",
@@ -93,14 +116,38 @@
                             "width": "",
                             "class": "",
                             "id": ""
-                        }
+                        },
+                        "default_value": "",
+                        "placeholder": ""
                     },
                     {
+                        "key": "field_592f32341c00d",
+                        "label": "Slide heading",
+                        "name": "slide_heading",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_588faa04951de",
+                                    "operator": "==",
+                                    "value": "text"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
                         "default_value": "",
-                        "maxlength": "",
-                        "placeholder": "Title of slide",
+                        "placeholder": "",
                         "prepend": "",
                         "append": "",
+                        "maxlength": ""
+                    },
+                    {
                         "key": "field_57f7f7f8421d4",
                         "label": "Slide Title",
                         "name": "title",
@@ -112,14 +159,14 @@
                             "width": "",
                             "class": "",
                             "id": ""
-                        }
-                    },
-                    {
+                        },
                         "default_value": "",
                         "maxlength": "",
-                        "placeholder": "Secondary title of slider",
+                        "placeholder": "Title of slide",
                         "prepend": "",
-                        "append": "",
+                        "append": ""
+                    },
+                    {
                         "key": "field_57f7f86d421d5",
                         "label": "Second Title",
                         "name": "title_2",
@@ -131,14 +178,14 @@
                             "width": "",
                             "class": "",
                             "id": ""
-                        }
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "Secondary title of slider",
+                        "prepend": "",
+                        "append": ""
                     },
                     {
-                        "default_value": "",
-                        "new_lines": "wpautop",
-                        "maxlength": "",
-                        "placeholder": "Description of slide",
-                        "rows": "",
                         "key": "field_57f7f883421d6",
                         "label": "Description",
                         "name": "description",
@@ -150,7 +197,12 @@
                             "width": "",
                             "class": "",
                             "id": ""
-                        }
+                        },
+                        "default_value": "",
+                        "new_lines": "wpautop",
+                        "maxlength": "",
+                        "placeholder": "Description of slide",
+                        "rows": ""
                     },
                     {
                         "key": "field_5914a9c95d284",
@@ -193,16 +245,13 @@
                             "id": ""
                         }
                     }
-                ],
-                "min": 0,
-                "max": 0,
-                "layout": "block",
-                "button_label": "Add Slide",
-                "collapsed": "",
-                "key": "field_57f7f705421d2",
-                "label": "Add slides",
-                "name": "slide",
-                "type": "repeater",
+                ]
+            },
+            {
+                "key": "field_588faa04951de",
+                "label": "Slider type",
+                "name": "slider_type",
+                "type": "select",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -210,9 +259,7 @@
                     "width": "",
                     "class": "",
                     "id": ""
-                }
-            },
-            {
+                },
                 "multiple": 0,
                 "allow_null": 0,
                 "choices": {
@@ -226,48 +273,7 @@
                 "ui": 0,
                 "ajax": 0,
                 "placeholder": "",
-                "return_format": "value",
-                "key": "field_588faa04951de",
-                "label": "Slider type",
-                "name": "slider_type",
-                "type": "select",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                }
-            },
-            {
-                "default_value": "",
-                "min": "",
-                "max": "",
-                "step": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "key": "field_58af4493cde4a",
-                "label": "Height",
-                "name": "height",
-                "type": "number",
-                "instructions": "Fixed height (px) that will have the slider.",
-                "required": 1,
-                "conditional_logic": [
-                    [
-                        {
-                            "field": "field_588faa04951de",
-                            "operator": "==",
-                            "value": "fixed"
-                        }
-                    ]
-                ],
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                }
+                "return_format": "value"
             }
         ],
         "location": [
