@@ -244,6 +244,22 @@
                             "class": "",
                             "id": ""
                         }
+                    },
+                    {
+                        "key": "field_5a60c15f16d57",
+                        "label": "Slide Link",
+                        "name": "slide_link",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": ""
                     }
                 ]
             },
