@@ -84,45 +84,87 @@ add_action( 'init', 'slider_taxonomy' );
 
 if( function_exists('acf_add_local_field_group') ):
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
   'key' => 'group_57f7f700465bb',
   'title' => 'Slide',
-  'fields' => array (
-    array (
-      'sub_fields' => array (
-        array (
-          'layout' => 'vertical',
-          'choices' => array (
-            'image' => 'Image',
-            'video' => 'Video',
-          ),
-          'default_value' => 'image',
-          'other_choice' => 0,
-          'save_other_choice' => 0,
-          'allow_null' => 0,
-          'return_format' => 'value',
+  'fields' => array(
+    array(
+      'key' => 'field_57f7f705421d2',
+      'label' => 'Add slides',
+      'name' => 'slide',
+      'type' => 'repeater',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array(
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'min' => 0,
+      'max' => 0,
+      'layout' => 'block',
+      'button_label' => 'Add Slide',
+      'collapsed' => '',
+      'sub_fields' => array(
+        array(
           'key' => 'field_58dd12c983471',
           'label' => 'Slide type',
           'name' => 'slide_type',
           'type' => 'radio',
           'instructions' => '',
           'required' => 0,
-          'conditional_logic' => array (
-            array (
-              array (
+          'conditional_logic' => array(
+            array(
+              array(
                 'field' => 'field_588faa04951de',
                 'operator' => '!=',
                 'value' => 'text',
               ),
             ),
           ),
-          'wrapper' => array (
+          'wrapper' => array(
             'width' => '',
             'class' => '',
             'id' => '',
           ),
+          'choices' => array(
+            'image' => 'Image',
+            'video' => 'Video',
+          ),
+          'allow_null' => 0,
+          'other_choice' => 0,
+          'save_other_choice' => 0,
+          'default_value' => 'image',
+          'layout' => 'vertical',
+          'return_format' => 'value',
         ),
-        array (
+        array(
+          'key' => 'field_57f7f790421d3',
+          'label' => 'Slide Image',
+          'name' => 'image',
+          'type' => 'image_crop',
+          'instructions' => '',
+          'required' => 1,
+          'conditional_logic' => array(
+            array(
+              array(
+                'field' => 'field_588faa04951de',
+                'operator' => '!=',
+                'value' => 'text',
+              ),
+              array(
+                'field' => 'field_58dd12c983471',
+                'operator' => '==',
+                'value' => 'image',
+              ),
+            ),
+          ),
+          'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
           'force_crop' => 'yes',
           'crop_type' => 'hard',
           'preview_size' => 'medium_large',
@@ -131,96 +173,66 @@ acf_add_local_field_group(array (
           'target_size' => 'custom',
           'library' => 'all',
           'retina_mode' => 'no',
-          'key' => 'field_57f7f790421d3',
-          'label' => 'Slide Image',
-          'name' => 'image',
-          'type' => 'image_crop',
-          'instructions' => '',
-          'required' => 1,
-          'conditional_logic' => array (
-            array (
-              array (
-                'field' => 'field_588faa04951de',
-                'operator' => '!=',
-                'value' => 'text',
-              ),
-              array (
-                'field' => 'field_58dd12c983471',
-                'operator' => '==',
-                'value' => 'image',
-              ),
-            ),
-          ),
-          'wrapper' => array (
-            'width' => '',
-            'class' => '',
-            'id' => '',
-          ),
           'width' => 1200,
           'height' => 600,
         ),
-        array (
-          'default_value' => '',
-          'placeholder' => '',
+        array(
           'key' => 'field_58dd132a83472',
           'label' => 'Slide video',
           'name' => 'video',
           'type' => 'url',
           'instructions' => 'Provide a Mp4, Vimeo or Youtube URL',
           'required' => 1,
-          'conditional_logic' => array (
-            array (
-              array (
+          'conditional_logic' => array(
+            array(
+              array(
                 'field' => 'field_58dd12c983471',
                 'operator' => '==',
                 'value' => 'video',
               ),
-              array (
+              array(
                 'field' => 'field_588faa04951de',
                 'operator' => '!=',
                 'value' => 'text',
               ),
             ),
           ),
-          'wrapper' => array (
+          'wrapper' => array(
             'width' => '',
             'class' => '',
             'id' => '',
           ),
+          'default_value' => '',
+          'placeholder' => '',
         ),
-        array (
+        array(
           'key' => 'field_592f32341c00d',
           'label' => 'Slide heading',
-          'name' => 'heading',
+          'name' => 'slide_heading',
           'type' => 'text',
           'instructions' => '',
           'required' => 0,
-          'conditional_logic' => array (
-            array (
-              array (
+          'conditional_logic' => array(
+            array(
+              array(
                 'field' => 'field_588faa04951de',
                 'operator' => '==',
                 'value' => 'text',
               ),
             ),
           ),
-          'wrapper' => array (
+          'wrapper' => array(
             'width' => '',
             'class' => '',
             'id' => '',
           ),
           'default_value' => '',
-          'placeholder' => 'Heading text of slide',
+          'placeholder' => '',
           'prepend' => '',
           'append' => '',
           'maxlength' => '',
         ),
-        array (
-          'default_value' => '',
-          'maxlength' => '',
-          'placeholder' => 'Title of slide',
-          'prepend' => '',
-          'append' => '',
+        array(
           'key' => 'field_57f7f7f8421d4',
           'label' => 'Slide Title',
           'name' => 'title',
@@ -228,18 +240,18 @@ acf_add_local_field_group(array (
           'instructions' => '',
           'required' => 0,
           'conditional_logic' => 0,
-          'wrapper' => array (
+          'wrapper' => array(
             'width' => '',
             'class' => '',
             'id' => '',
           ),
-        ),
-        array (
           'default_value' => '',
           'maxlength' => '',
-          'placeholder' => 'Secondary title of slide',
+          'placeholder' => 'Title of slide',
           'prepend' => '',
           'append' => '',
+        ),
+        array(
           'key' => 'field_57f7f86d421d5',
           'label' => 'Second Title',
           'name' => 'title_2',
@@ -247,18 +259,18 @@ acf_add_local_field_group(array (
           'instructions' => '',
           'required' => 0,
           'conditional_logic' => 0,
-          'wrapper' => array (
+          'wrapper' => array(
             'width' => '',
             'class' => '',
             'id' => '',
           ),
-        ),
-        array (
           'default_value' => '',
-          'new_lines' => 'wpautop',
           'maxlength' => '',
-          'placeholder' => 'Description of slide',
-          'rows' => '',
+          'placeholder' => 'Secondary title of slider',
+          'prepend' => '',
+          'append' => '',
+        ),
+        array(
           'key' => 'field_57f7f883421d6',
           'label' => 'Description',
           'name' => 'description',
@@ -266,13 +278,18 @@ acf_add_local_field_group(array (
           'instructions' => '',
           'required' => 0,
           'conditional_logic' => 0,
-          'wrapper' => array (
+          'wrapper' => array(
             'width' => '',
             'class' => '',
             'id' => '',
           ),
+          'default_value' => '',
+          'new_lines' => 'wpautop',
+          'maxlength' => '',
+          'placeholder' => 'Description of slide',
+          'rows' => '',
         ),
-        array (
+        array(
           'key' => 'field_5914a9c95d284',
           'label' => 'Button Design',
           'name' => 'button_design',
@@ -280,16 +297,16 @@ acf_add_local_field_group(array (
           'instructions' => '',
           'required' => 0,
           'conditional_logic' => 0,
-          'wrapper' => array (
+          'wrapper' => array(
             'width' => '',
             'class' => '',
             'id' => '',
           ),
-          'choices' => array (
+          'choices' => array(
             'Basic' => 'Basic',
             'E-commerce' => 'E-commerce',
           ),
-          'default_value' => array (
+          'default_value' => array(
             0 => 'Basic',
           ),
           'allow_null' => 0,
@@ -299,7 +316,7 @@ acf_add_local_field_group(array (
           'return_format' => 'value',
           'placeholder' => '',
         ),
-        array (
+        array(
           'key' => 'field_57f7f8d6421d8',
           'label' => 'Button Link',
           'name' => 'link',
@@ -307,46 +324,31 @@ acf_add_local_field_group(array (
           'instructions' => '',
           'required' => 0,
           'conditional_logic' => 0,
-          'wrapper' => array (
+          'wrapper' => array(
             'width' => '',
             'class' => '',
             'id' => '',
           ),
         ),
-      ),
-      'min' => 0,
-      'max' => 0,
-      'layout' => 'block',
-      'button_label' => 'Add Slide',
-      'collapsed' => '',
-      'key' => 'field_57f7f705421d2',
-      'label' => 'Add slides',
-      'name' => 'slide',
-      'type' => 'repeater',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
+        array(
+          'key' => 'field_5a60c15f16d57',
+          'label' => 'Slide Link',
+          'name' => 'slide_link',
+          'type' => 'url',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'placeholder' => '',
+        ),
       ),
     ),
-    array (
-      'multiple' => 0,
-      'allow_null' => 0,
-      'choices' => array (
-        'full' => 'Full Screen Slider',
-        'full_responsive' => 'Full Width Slider (Responsive)',
-        'text' => 'Text Slider',
-      ),
-      'default_value' => array (
-        0 => 'full',
-      ),
-      'ui' => 0,
-      'ajax' => 0,
-      'placeholder' => '',
-      'return_format' => 'value',
+    array(
       'key' => 'field_588faa04951de',
       'label' => 'Slider type',
       'name' => 'slider_type',
@@ -354,16 +356,30 @@ acf_add_local_field_group(array (
       'instructions' => '',
       'required' => 0,
       'conditional_logic' => 0,
-      'wrapper' => array (
+      'wrapper' => array(
         'width' => '',
         'class' => '',
         'id' => '',
       ),
+      'multiple' => 0,
+      'allow_null' => 0,
+      'choices' => array(
+        'full' => 'Full Screen Slider',
+        'full_responsive' => 'Full Width Slider (Responsive)',
+        'text' => 'Text Slider',
+      ),
+      'default_value' => array(
+        0 => 'full',
+      ),
+      'ui' => 0,
+      'ajax' => 0,
+      'placeholder' => '',
+      'return_format' => 'value',
     ),
   ),
-  'location' => array (
-    array (
-      array (
+  'location' => array(
+    array(
+      array(
         'param' => 'post_type',
         'operator' => '==',
         'value' => 'slider',
@@ -375,7 +391,7 @@ acf_add_local_field_group(array (
   'style' => 'default',
   'label_placement' => 'top',
   'instruction_placement' => 'label',
-  'hide_on_screen' => array (
+  'hide_on_screen' => array(
     0 => 'the_content',
     1 => 'excerpt',
     2 => 'custom_fields',
