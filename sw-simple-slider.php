@@ -173,8 +173,8 @@ acf_add_local_field_group(array(
           'target_size' => 'custom',
           'library' => 'all',
           'retina_mode' => 'no',
-          'width' => 1200,
-          'height' => 600,
+          'width' => 1600,
+          'height' => 667,
         ),
         array(
           'key' => 'field_58dd132a83472',
